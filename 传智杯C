@@ -1,0 +1,28 @@
+# 刘氏生
+# 时间：2022/9/21 14:45
+n = int(input())
+price = []
+nums = map(int,input().split())
+w = int(input())
+for x in nums:
+    price.append(x)
+price.sort()
+res = 0
+for i in range(n-1,0,-1):
+    if price[i] <= w:
+        w = price[i]
+        break
+for i in range(n):
+    if w-price[i] >=0:
+        res+=1
+        w-=price[i]
+print(res)
+
+
+
+
+
+
+
+
+
