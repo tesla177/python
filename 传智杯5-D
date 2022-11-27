@@ -1,0 +1,26 @@
+n = int(input())
+ans = []
+for i in range(n):
+    a = int(input())
+    l = 1
+    r = 2e9
+    index = 0
+    while(l<=r):
+        mid = (l+r)//2
+        if(mid * mid * 2 - mid) >= a:
+            r = mid - 1
+            index = mid
+        else:
+            l = mid + 1
+    index-=1
+    len = index*index*2-index
+    a-=len+1
+    if a<=index:
+        ans.append(k)
+    elif a<=3*index:
+        ans.append(2*index-a)
+    else:
+        ans.append(a-4*index)
+
+for x in ans:
+    print('{:g}'.format(x))
